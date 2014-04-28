@@ -22,6 +22,32 @@
 		{{outlet}}
 
   </script>
+  <script type="text/x-handlebars" id="posts">
+		<div class="container-fluid">	
+			<div class="row-fluid">	
+				<div class="span3">	
+					<table class='table'>
+						<thead>
+							<tr><th>Recent Posts</th></tr>
+						</thead>
+						{{#each}}
+						<tr><td>
+						{{#link-to 'post' this}}
+							{{title}} <small class='muted'>by {{author}}</small>
+						{{/link-to}}
+						<td><tr>
+						{{/each}}
+					</table>
+				</div>
+			</div>
+		</div>
+	</script>
+
+  <script type="text/x-handlebars" id="post">
+		<h1> {{title}} </h2>
+		<h2> by {{author}} </h2>
+		<p> {{body}} </p>
+	</script>
 
 	<script type="text/x-handlebars" id="about">
 		<p>Hello!</p>
